@@ -1,0 +1,26 @@
+1. Modify ppsspp_config.h
+
+// Comment this and uncomment PPSSPP_API_D3DX9 if D3DX9 is prefered.
+#define PPSSPP_API_D3D9_D3DCOMPILER 1
+//#define PPSSPP_API_D3DX9 1
+#endif
+#define PPSSPP_API_D3D11 1
+#endif
+
+==>
+
+// Comment this and uncomment PPSSPP_API_D3DX9 if D3DX9 is prefered.
+#define PPSSPP_API_D3D9_D3DCOMPILER 1
+#define PPSSPP_API_D3DX9 1
+#endif
+#define PPSSPP_API_D3D11 1
+#endif
+
+2. Create vcproject file
+mkdir build
+cd build
+cmake -DLIBRETRO=ON -DCMAKE_CXX_FLAGS_RELEASE="/MT" ..
+
+3. Build
+Open build\libretro\ppsspp_libretro.vcxproj
+Build x64 release
