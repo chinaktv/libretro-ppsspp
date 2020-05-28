@@ -1,4 +1,4 @@
-
+﻿
 #include <cstring>
 #include <cassert>
 #include <thread>
@@ -163,30 +163,30 @@ private:
 	std::vector<std::pair<std::string, T>> list_;
 };
 
-static RetroOption<CPUCore> ppsspp_cpu_core("ppsspp_cpu_core", "CPU Core", { { "jit", CPUCore::JIT }, { "IR jit", CPUCore::IR_JIT }, { "interpreter", CPUCore::INTERPRETER } });
-static RetroOption<int> ppsspp_locked_cpu_speed("ppsspp_locked_cpu_speed", "Locked CPU Speed", { { "off", 0 }, { "222MHz", 222 }, { "266MHz", 266 }, { "333MHz", 333 } });
-static RetroOption<int> ppsspp_language("ppsspp_language", "Language", { { "automatic", -1 }, { "english", PSP_SYSTEMPARAM_LANGUAGE_ENGLISH }, { "japanese", PSP_SYSTEMPARAM_LANGUAGE_JAPANESE }, { "french", PSP_SYSTEMPARAM_LANGUAGE_FRENCH }, { "spanish", PSP_SYSTEMPARAM_LANGUAGE_SPANISH }, { "german", PSP_SYSTEMPARAM_LANGUAGE_GERMAN }, { "italian", PSP_SYSTEMPARAM_LANGUAGE_ITALIAN }, { "dutch", PSP_SYSTEMPARAM_LANGUAGE_DUTCH }, { "portuguese", PSP_SYSTEMPARAM_LANGUAGE_PORTUGUESE }, { "russian", PSP_SYSTEMPARAM_LANGUAGE_RUSSIAN }, { "korean", PSP_SYSTEMPARAM_LANGUAGE_KOREAN }, { "chinese_traditional", PSP_SYSTEMPARAM_LANGUAGE_CHINESE_TRADITIONAL }, { "chinese_simplified", PSP_SYSTEMPARAM_LANGUAGE_CHINESE_SIMPLIFIED } });
-static RetroOption<int> ppsspp_rendering_mode("ppsspp_rendering_mode", "Rendering Mode", { { "buffered", FB_BUFFERED_MODE }, { "nonbuffered", FB_NON_BUFFERED_MODE } });
-static RetroOption<bool> ppsspp_auto_frameskip("ppsspp_auto_frameskip", "Auto Frameskip", false);
-static RetroOption<int> ppsspp_frameskip("ppsspp_frameskip", "Frameskip", 0, 10);
-static RetroOption<int> ppsspp_frameskiptype("ppsspp_frameskiptype", "Frameskip Type", 0, 10);
-static RetroOption<int> ppsspp_audio_latency("ppsspp_audio_latency", "Audio latency", { "low", "medium", "high" });
-static RetroOption<int> ppsspp_internal_resolution("ppsspp_internal_resolution", "Internal Resolution", 1, { "480x272", "960x544", "1440x816", "1920x1088", "2400x1360", "2880x1632", "3360x1904", "3840x2176", "4320x2448", "4800x2720" });
-static RetroOption<int> ppsspp_button_preference("ppsspp_button_preference", "Confirmation Button", { { "cross", PSP_SYSTEMPARAM_BUTTON_CROSS }, { "circle", PSP_SYSTEMPARAM_BUTTON_CIRCLE } });
-static RetroOption<bool> ppsspp_fast_memory("ppsspp_fast_memory", "Fast Memory (Speedhack)", true);
-static RetroOption<bool> ppsspp_block_transfer_gpu("ppsspp_block_transfer_gpu", "Block Transfer GPU", true);
-static RetroOption<int> ppsspp_texture_scaling_level("ppsspp_texture_scaling_level", "Texture Scaling Level", { { "1", 1 }, { "2", 2 }, { "3", 3 }, { "4", 4 }, { "5", 5 }, { "0", 0 } });
-static RetroOption<int> ppsspp_texture_scaling_type("ppsspp_texture_scaling_type", "Texture Scaling Type", { { "xbrz", TextureScalerCommon::XBRZ }, { "hybrid", TextureScalerCommon::HYBRID }, { "bicubic", TextureScalerCommon::BICUBIC }, { "hybrid_bicubic", TextureScalerCommon::HYBRID_BICUBIC } });
-static RetroOption<int> ppsspp_texture_filtering("ppsspp_texture_filtering", "Texture Filtering", { { "auto", 1 }, { "nearest", 2 }, { "linear", 3 }, { "linear(FMV)", 4 } });
-static RetroOption<int> ppsspp_texture_anisotropic_filtering("ppsspp_texture_anisotropic_filtering", "Anisotropic Filtering", { "off", "1x", "2x", "4x", "8x", "16x" });
-static RetroOption<bool> ppsspp_texture_deposterize("ppsspp_texture_deposterize", "Texture Deposterize", false);
-static RetroOption<bool> ppsspp_texture_replacement("ppsspp_texture_replacement", "Texture Replacement", false);
-static RetroOption<bool> ppsspp_gpu_hardware_transform("ppsspp_gpu_hardware_transform", "GPU Hardware T&L", true);
-static RetroOption<bool> ppsspp_vertex_cache("ppsspp_vertex_cache", "Vertex Cache (Speedhack)", true);
-static RetroOption<bool> ppsspp_separate_io_thread("ppsspp_separate_io_thread", "IO Threading", false);
-static RetroOption<bool> ppsspp_unsafe_func_replacements("ppsspp_unsafe_func_replacements", "Unsafe FuncReplacements", true);
-static RetroOption<bool> ppsspp_cheats("ppsspp_cheats", "Internal Cheats Support", false);
-static RetroOption<IOTimingMethods> ppsspp_io_timing_method("ppsspp_io_timing_method", "IO Timing Method", { { "Fast", IOTimingMethods::IOTIMING_FAST }, { "Host", IOTimingMethods::IOTIMING_HOST }, { "Simulate UMD delays", IOTimingMethods::IOTIMING_REALISTIC } });
+static RetroOption<CPUCore> ppsspp_cpu_core("ppsspp_cpu_core", "CPU内核", { { "及时编译", CPUCore::JIT }, { "解释器+即时编译", CPUCore::IR_JIT }, { "解释器", CPUCore::INTERPRETER } });
+static RetroOption<int> ppsspp_locked_cpu_speed("ppsspp_locked_cpu_speed", "锁定CPU速度", { { "关闭", 0 }, { "222MHz", 222 }, { "266MHz", 266 }, { "333MHz", 333 } });
+static RetroOption<int> ppsspp_language("ppsspp_language", "语言", { { "自动", -1 }, { "english", PSP_SYSTEMPARAM_LANGUAGE_ENGLISH }, { "japanese", PSP_SYSTEMPARAM_LANGUAGE_JAPANESE }, { "french", PSP_SYSTEMPARAM_LANGUAGE_FRENCH }, { "spanish", PSP_SYSTEMPARAM_LANGUAGE_SPANISH }, { "german", PSP_SYSTEMPARAM_LANGUAGE_GERMAN }, { "italian", PSP_SYSTEMPARAM_LANGUAGE_ITALIAN }, { "dutch", PSP_SYSTEMPARAM_LANGUAGE_DUTCH }, { "portuguese", PSP_SYSTEMPARAM_LANGUAGE_PORTUGUESE }, { "russian", PSP_SYSTEMPARAM_LANGUAGE_RUSSIAN }, { "korean", PSP_SYSTEMPARAM_LANGUAGE_KOREAN }, { "chinese_traditional", PSP_SYSTEMPARAM_LANGUAGE_CHINESE_TRADITIONAL }, { "chinese_simplified", PSP_SYSTEMPARAM_LANGUAGE_CHINESE_SIMPLIFIED } });
+static RetroOption<int> ppsspp_rendering_mode("ppsspp_rendering_mode", "渲染模式", { { "缓冲", FB_BUFFERED_MODE }, { "无缓冲", FB_NON_BUFFERED_MODE } });
+static RetroOption<bool> ppsspp_auto_frameskip("ppsspp_auto_frameskip", "自动跳帧", false);
+static RetroOption<int> ppsspp_frameskip("ppsspp_frameskip", "跳帧", 0, 10);
+static RetroOption<int> ppsspp_frameskiptype("ppsspp_frameskiptype", "跳帧方式", 0, 10);
+static RetroOption<int> ppsspp_audio_latency("ppsspp_audio_latency", "自动延迟", { "低", "中", "高" });
+static RetroOption<int> ppsspp_internal_resolution("ppsspp_internal_resolution", "内部分辨率", 1, { "480x272", "960x544", "1440x816", "1920x1088", "2400x1360", "2880x1632", "3360x1904", "3840x2176", "4320x2448", "4800x2720" });
+static RetroOption<int> ppsspp_button_preference("ppsspp_button_preference", "确认按钮", { { "X键", PSP_SYSTEMPARAM_BUTTON_CROSS }, { "O键", PSP_SYSTEMPARAM_BUTTON_CIRCLE } });
+static RetroOption<bool> ppsspp_fast_memory("ppsspp_fast_memory", "快速内存（速度Hack）", true);
+static RetroOption<bool> ppsspp_block_transfer_gpu("ppsspp_block_transfer_gpu", "块式GPU传输", true);
+static RetroOption<int> ppsspp_texture_scaling_level("ppsspp_texture_scaling_level", "纹理缩放级别", { { "1", 1 }, { "2", 2 }, { "3", 3 }, { "4", 4 }, { "5", 5 }, { "0", 0 } });
+static RetroOption<int> ppsspp_texture_scaling_type("ppsspp_texture_scaling_type", "纹理缩放方式", { { "xbrz", TextureScalerCommon::XBRZ }, { "hybrid", TextureScalerCommon::HYBRID }, { "bicubic", TextureScalerCommon::BICUBIC }, { "hybrid_bicubic", TextureScalerCommon::HYBRID_BICUBIC } });
+static RetroOption<int> ppsspp_texture_filtering("ppsspp_texture_filtering", "纹理过滤", { { "自动", 1 }, { "最邻近像素", 2 }, { "双线性", 3 }, { "双线性(FMV)", 4 } });
+static RetroOption<int> ppsspp_texture_anisotropic_filtering("ppsspp_texture_anisotropic_filtering", "各向异性过滤", { "关闭", "1x", "2x", "4x", "8x", "16x" });
+static RetroOption<bool> ppsspp_texture_deposterize("ppsspp_texture_deposterize", "纹理融合", false);
+static RetroOption<bool> ppsspp_texture_replacement("ppsspp_texture_replacement", "纹理替换", false);
+static RetroOption<bool> ppsspp_gpu_hardware_transform("ppsspp_gpu_hardware_transform", "GPU硬件T&L", true);
+static RetroOption<bool> ppsspp_vertex_cache("ppsspp_vertex_cache", "顶点缓存（速度Hack）", true);
+static RetroOption<bool> ppsspp_separate_io_thread("ppsspp_separate_io_thread", "独立IO线程", false);
+static RetroOption<bool> ppsspp_unsafe_func_replacements("ppsspp_unsafe_func_replacements", "不安全的函数替换", true);
+static RetroOption<bool> ppsspp_cheats("ppsspp_cheats", "内建作弊支持", false);
+static RetroOption<IOTimingMethods> ppsspp_io_timing_method("ppsspp_io_timing_method", "IO时序方式", { { "快速方式", IOTimingMethods::IOTIMING_FAST }, { "主机方式", IOTimingMethods::IOTIMING_HOST }, { "模拟UMD延迟", IOTimingMethods::IOTIMING_REALISTIC } });
 
 void retro_set_environment(retro_environment_t cb) {
 	std::vector<retro_variable> vars;
