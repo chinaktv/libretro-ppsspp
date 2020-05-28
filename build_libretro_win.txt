@@ -1,3 +1,6 @@
+Install VC2019 Community
+Install Python through Windows  Store
+
 1. Modify ppsspp_config.h
 
 // Comment this and uncomment PPSSPP_API_D3DX9 if D3DX9 is prefered.
@@ -19,7 +22,7 @@
 2. Create vcproject file
 mkdir build
 cd build
-cmake -DLIBRETRO=ON -DCMAKE_CXX_FLAGS_RELEASE="/MT" ..
+cmake -DLIBRETRO=ON -DCMAKE_CXX_FLAGS_RELEASE="/MT /utf-8" ..
 
 3. Build
 cd build\libretro
