@@ -22,5 +22,5 @@ cd build
 cmake -DLIBRETRO=ON -DCMAKE_CXX_FLAGS_RELEASE="/MT" ..
 
 3. Build
-Open build\libretro\ppsspp_libretro.vcxproj
-Build x64 release
+cd build\libretro
+msbuild ppsspp_libretro.vcxproj -p:Platform=x64;Configuration=Release
